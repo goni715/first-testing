@@ -1,5 +1,5 @@
 import { it, expect, test } from "vitest";
-import { add, add2 } from "./main";
+import { add, add2, returnStrLength } from "./main";
 
 it("Should return the correct sum if an array of number is provided", () => {
   //Arrange
@@ -36,7 +36,6 @@ test("It Should return correct sum if an array of numeric string is provided", (
   expect(result).toBe(expectedResult);
 });
 
-
 /*==============================
  Test case for error
 ===============================*/
@@ -62,4 +61,17 @@ test("It should throw an error if multiple argument is provided", () => {
   };
 
   expect(resultFn).toThrow(/is not iterable/i);
+});
+
+//test case for returnStrLength
+it("It should return the correct length", () => {
+  expect(returnStrLength("Hello")).toBe(5);
+});
+
+it("It should return 0 for an empty string", () => {
+  expect(returnStrLength("")).toBe(0);
+});
+
+test("should return the correct length including spaces", () => {
+  expect(returnStrLength("Hello World")).toBe(11);
 });

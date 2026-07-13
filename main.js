@@ -8,7 +8,7 @@ export function add(numbers) {
   return sum;
 }
 
-
+//for error testing
 export function add2(numbers) {
   let sum = 0;
 
@@ -20,3 +20,5 @@ export function add2(numbers) {
 
   return sum;
 }
+
+export const returnStrLength = (str) => str.length;
