@@ -12,7 +12,7 @@ export function add(numbers) {
 export function add2(numbers) {
   let sum = 0;
 
-  throw new Error("something went wrong");
+  //throw new Error("something went wrong");
 
   for (const number of numbers) {
     sum += +number;
