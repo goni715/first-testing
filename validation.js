@@ -8,7 +8,7 @@ export const validateEmail = (email) => {
 
 
 export const validateArrayNotEmpty = (arr) => {
-    if(!Array.isArray(arr) || arr.lengh ===0){
+    if(!Array.isArray(arr) || arr.length ===0){
         throw new Error("Array can't be empty");
     }
 }

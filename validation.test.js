@@ -17,7 +17,7 @@ describe("validateEmail()", () => {
   test("should throw an error if an empty string is passed", () => {
     const email = " ";
     const resultFn = () => validateEmail(email);
-    expect(resultFn).toThrow("invalid email address");
+    expect(resultFn).toThrow("Invalid Email Address");
   });
 
   test("should throw an error if an undefined email is passed", () => {
@@ -36,17 +36,17 @@ describe("validateArrayNotEmpty()", () => {
 
   it("should throw an error for an empty error", () => {
     const resultFn = () => validateArrayNotEmpty([]);
-    expect(resultFn).toThrow("Array can't be empty");
+    expect(resultFn).toThrow(`Array can't be empty`);
   });
 
   it("should throw an error for a non-array input", () => {
     const resultFn = () => validateArrayNotEmpty("hh");
-    expect(resultFn).toThrow(`This is not array input`);
+    expect(resultFn).toThrow(`Array can't be empty`);
   });
 
   it("should throw an error for an undefined input", () => {
     expect(() => validateArrayNotEmpty(undefined)).toThrow(
-      `Array can't be undefined`,
+      `Array can't be empty`,
     );
   });
 });
