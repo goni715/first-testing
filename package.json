@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+   "type": "module",
   "scripts": {
     "test": "vitest --reporter verbose",
     "test1": "vitest",
@@ -11,8 +12,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
   }
 }
