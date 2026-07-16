@@ -1,7 +1,24 @@
 import { expect, it, test } from "vitest";
 import { encryptMessage, encryptMessagePromise } from "./async";
 import CryptoJS from "crypto-js";
+import { beforeAll, beforeEach, afterEach, afterAll } from "vitest";
 
+
+beforeAll(() => {
+  console.log("Before All tests");
+});
+
+beforeEach(() => {
+  console.log("Before each test");
+});
+
+afterEach(() => {
+  console.log("After each test");
+});
+
+afterAll(() => {
+  console.log("After all tests");
+});
 
 it("It should encrypt a message", async () => {
   const message = "Osman Goni";
