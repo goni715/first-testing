@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, test } from "vitest";
+import { beforeAll, beforeEach, describe, expect, it, test } from "vitest";
 import { User } from "./hooks";
 
 const email = "goni@gmail.com";
@@ -8,24 +8,33 @@ beforeEach(() => {
   user = new User(email);
 });
 
-it("should have an email property", () => {
-  expect(user).toHaveProperty("email");
-});
+describe("test-suit", () => {
+  //hook
+  beforeAll(() => {
+    console.log("Before test suit cases");
+  });
 
-test("should update the email", () => {
-  const newEmail = "evan@gmail.com";
 
-  user.updateEmail(newEmail);
+  //concurrently
+  it.concurrent("should have an email property", () => {
+    expect(user).toHaveProperty("email");
+  });
 
-  expect(user.email).toBe(newEmail);
-});
+  test("should update the email", () => {
+    const newEmail = "evan@gmail.com";
 
-it("should clear the email", () => {
-  user.clearEmail("");
+    user.updateEmail(newEmail);
 
-  expect(user.email).toBe("");
-});
+    expect(user.email).toBe(newEmail);
+  });
 
-test("should store the provided email value", () => {
-  expect(user.email).toBe(email);
+  it("should clear the email", () => {
+    user.clearEmail("");
+
+    expect(user.email).toBe("");
+  });
+
+  test("should store the provided email value", () => {
+    expect(user.email).toBe(email);
+  });
 });
