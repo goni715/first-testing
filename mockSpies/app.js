@@ -8,6 +8,7 @@ function log(message) {
 export function generateToken(logger) {
   const token = crypto.randomBytes(32).toString("hex");
 
+  // if (logger) console.log(token);  //expected "vi.fn()" to be called at least once
   if (logger) logger(token);
   return token;
 }
