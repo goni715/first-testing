@@ -4,6 +4,9 @@ import { generateToken } from "./app";
 describe("generateToken()", () => {
   it("should execute the logger function if passed", () => {
     const loggerFn = vi.fn();
+    //mockImplementationOnce
+    loggerFn.mockImplementationOnce(() => {});
+
     generateToken(loggerFn);
 
     expect(loggerFn).toHaveBeenCalled();
